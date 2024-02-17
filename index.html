@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P-Ticket</title>
+
+  <!-- tailwind and daisyui cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- custom styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "main": '#1DD100',
+          }
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <header class="container mx-auto max-w-[1180px] lg:px-24 px-4 mt-4">
+    <nav>
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 ">
+              <li><a>Home</a></li>
+              <li><a>About</a></li>
+              <li><a>Destination</a></li>
+              <li><a>Search</a></li>
+            </ul>
+          </div>
+          <a class=" text-2xl font-bold font-raleway">P-Ticket</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 text-[#030712B2]">
+            <li><a>Home</a></li>
+            <li><a>About</a></li>
+            <li><a>Destination</a></li>
+            <li><a>Search</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a class=" border border-[#1DD100] btn text-main font-bold text-lg bg-[#e1ecdf]">Bus <img class="w-5 h-5"
+              src="images/bus-icon.png" alt=""></a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="mt-5">
+      <div class="w-full h-[480px] bg-red-300 rounded-2xl">
+        <div
+          class="bg-[linear url('./images/banner.png')]   rounded-2xl w-full h-full bg-cover bg-center flex flex-col items-center">
+          <h1 class="text-[3.5rem] font-extrabold font-raleway text-center leading-[70px] pt-16"><span
+              class="text-white">End-to-End Travel with
+            </span><br><span class="text-main">P Paribahan</span></h1>
+        </div>
+      </div>
+    </section>
+  </header>
+  <main></main>
+  <footer></footer>
+
+</body>
+
+</html>
