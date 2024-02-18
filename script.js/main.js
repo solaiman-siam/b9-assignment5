@@ -130,11 +130,18 @@ function setDiscountElementById(a, price) {
   ab.appendChild(li);
 }
 
-let value = numberInput.value
 
 numberInput.addEventListener('keyup', (event) => {
     if(count > 0 && event.target.value.length > 0 ){
         document.getElementById('next-button').classList.remove("btn-disabled")
     }
+    document.getElementById('next-button').addEventListener('click', () => {
+        event.target.value = ""
+        document.getElementById('next-button').classList.add('btn-disabled')
+    })
 })
 
+
+document.getElementById('continue').addEventListener("load", (event) => {});
+
+onload = (event) => {};
