@@ -1,5 +1,6 @@
 let seatContainer = document.getElementById("seat-container");
 let couponBtn = document.getElementById("coupon-button");
+let numberInput = document.getElementById('input-number')
 
 let count = 0;
 let totalPrice = 0;
@@ -15,6 +16,7 @@ seatContainer.addEventListener("click", (event) => {
     if (count >= 3) {
       couponBtn.classList.remove("btn-disabled");
     }
+    
 
     if (count === 4) {
       alert("You can sellect maximum 4 seat");
@@ -29,6 +31,13 @@ seatContainer.addEventListener("click", (event) => {
       setValueById("total-price", totalPrice);
       setValueById("grand-total-price", totalPrice);
     }
+    numberInput.addEventListener('keyup', (event) => {
+        if(count > 0 && event.target.value.length > 0 ){
+            document.getElementById('next-button').classList.remove("btn-disabled")
+        }
+    })
+    
+    
   }
 });
 
@@ -67,6 +76,11 @@ function setElementById(a, b) {
 let couponInput = document.getElementById("coupon-input");
 
 couponBtn.addEventListener("click", function () {
+    if(count === 1 && numberInput.value.length === 1){
+        document.getElementById('next-btn').classList.remove('btn-disabled')
+    }
+    
+    console.log(numberInput.value.length)
   if (couponInput.value === "NEW15") {
     let discount = discountFifteen("grand-total-price");
     setDiscountElementById("coupon-container", discount);
@@ -115,3 +129,12 @@ function setDiscountElementById(a, price) {
   li.innerHTML = `<p>Discount Price </p><p>BDT ${price}</p>`;
   ab.appendChild(li);
 }
+
+let value = numberInput.value
+
+numberInput.addEventListener('keyup', (event) => {
+    if(count > 0 && event.target.value.length > 0 ){
+        document.getElementById('next-button').classList.remove("btn-disabled")
+    }
+})
+
