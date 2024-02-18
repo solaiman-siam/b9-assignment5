@@ -1,22 +1,23 @@
 let seatContainer = document.getElementById("seat-container");
 let couponBtn = document.getElementById("coupon-button");
-let numberInput = document.getElementById('input-number')
+let numberInput = document.getElementById("input-number");
+let couponInput = document.getElementById("coupon-input");
 
 let count = 0;
 let totalPrice = 0;
+
 seatContainer.addEventListener("click", (event) => {
   let perSeat = event.target;
 
   if (
     event.target.nodeName === "P" &&
     event.target.innerText.length === 2 &&
-    event.target.classList[6] !== "ab"
+    event.target.classList[6] !== "sellected"
   ) {
-    event.target.classList.add("ab");
+    event.target.classList.add("sellected");
     if (count >= 3) {
       couponBtn.classList.remove("btn-disabled");
     }
-    
 
     if (count === 4) {
       alert("You can sellect maximum 4 seat");
@@ -31,15 +32,10 @@ seatContainer.addEventListener("click", (event) => {
       setValueById("total-price", totalPrice);
       setValueById("grand-total-price", totalPrice);
     }
-    numberInput.addEventListener('keyup', (event) => {
-        if(count > 0 && event.target.value.length > 0 ){
-            document.getElementById('next-button').classList.remove("btn-disabled")
-        }
-    })
-    
-    
   }
 });
+
+
 
 function seatAddValueById(elementId) {
   let element = document.getElementById(elementId);
@@ -48,6 +44,8 @@ function seatAddValueById(elementId) {
   );
   element.innerText = sellectedTotalSeatConvertToNumber + 1;
 }
+
+
 function seatRemoveValueById(elementId) {
   let element = document.getElementById(elementId);
   let seatLeftConvertToNumber = parseInt(
@@ -62,6 +60,7 @@ function setValueById(elementId, value) {
   element.innerText = value;
 }
 
+
 function setElementById(a, b) {
   let ab = document.getElementById(a);
 
@@ -73,14 +72,14 @@ function setElementById(a, b) {
   ab.appendChild(li);
 }
 
-let couponInput = document.getElementById("coupon-input");
+
 
 couponBtn.addEventListener("click", function () {
-    if(count === 1 && numberInput.value.length === 1){
-        document.getElementById('next-btn').classList.remove('btn-disabled')
-    }
-    
-    console.log(numberInput.value.length)
+  if (count === 1 && numberInput.value.length === 1) {
+    document.getElementById("next-btn").classList.remove("btn-disabled");
+  }
+
+  console.log(numberInput.value.length);
   if (couponInput.value === "NEW15") {
     let discount = discountFifteen("grand-total-price");
     setDiscountElementById("coupon-container", discount);
@@ -97,7 +96,6 @@ couponBtn.addEventListener("click", function () {
   }
 });
 
-function abcd() {}
 
 function discountFifteen(elementId) {
   let element = document.getElementById(elementId);
@@ -123,25 +121,21 @@ function discountTwenty(elementId) {
 
 function setDiscountElementById(a, price) {
   let ab = document.getElementById(a);
-
   let li = document.createElement("li");
   li.classList.add("flex", "justify-between", "text-[#000]", "font-medium");
   li.innerHTML = `<p>Discount Price </p><p>BDT ${price}</p>`;
   ab.appendChild(li);
 }
 
+numberInput.addEventListener("focus", (event) => {
+  if (count > 0) {
+    document.getElementById("next-button").classList.remove("btn-disabled");
+  }
+  document.getElementById("next-button").addEventListener("click", () => {
+    event.target.value = "";
+    document.getElementById("next-button").classList.add("btn-disabled");
+  });
+});
 
-numberInput.addEventListener('keyup', (event) => {
-    if(count > 0 && event.target.value.length > 0 ){
-        document.getElementById('next-button').classList.remove("btn-disabled")
-    }
-    document.getElementById('next-button').addEventListener('click', () => {
-        event.target.value = ""
-        document.getElementById('next-button').classList.add('btn-disabled')
-    })
-})
 
 
-document.getElementById('continue').addEventListener("load", (event) => {});
-
-onload = (event) => {};

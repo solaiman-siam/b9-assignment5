@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>P-Ticket</title>
+  <link rel="shortcut icon" href="images/bus-icon.png" type="image/x-icon">
 
   <!-- tailwind and daisyui cdn -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -28,6 +29,9 @@
 </head>
 
 <body class="font-inter">
+
+  <!-- navbar section  -->
+
   <header class="container mx-auto max-w-[1180px] lg:px-24 px-4 mt-4">
     <nav>
       <div class="navbar bg-base-100">
@@ -72,16 +76,18 @@
       <div class="w-full h-[480px] rounded-2xl">
         <div
           class="bg-[linear-gradient(90deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url('./images/banner.png')]   rounded-2xl w-full h-full bg-cover bg-center flex flex-col items-center relative">
-          <h1 class=" text-3xl px-3  lg:text-[3.5rem] font-extrabold font-raleway text-center lg:leading-[70px] pt-16"><span
-              class="text-white">End-to-End Travel with
-            </span><br><span class="text-main">P Paribahan</span></h1>
-          <p class="text-white text-center lg:w-8/12 pt-5 px-7">Yes, you can run unit tests and view the results directly
+          <h1 class=" text-3xl px-3  lg:text-[3.5rem] font-extrabold font-raleway text-center lg:leading-[70px] pt-16">
+            <span class="text-white">End-to-End Travel with
+            </span><br><span class="text-main">P Paribahan</span>
+          </h1>
+          <p class="text-white text-center lg:w-8/12 pt-5 px-7">Yes, you can run unit tests and view the results
+            directly
             within
             the app. The integrated testing features allow for a streamlined .</p>
           <a href="#ticket"
             class="btn hover:bg-[#1cd100e4] btn-lg bg-main border-0 text-base mt-9 font-raleway  font-bold">Buy
             Tickets</a>
-          
+
           <div class=" w-full absolute -bottom-56 lg:-bottom-11 flex-wrap flex justify-center gap-5">
             <div class="bg-main pb-1 rounded-2xl">
               <div
@@ -394,7 +400,7 @@
             </div>
           </div>
 
-          <!-- Pricing part  -->
+          <!-- Pricing part table section  -->
 
           <div class=" col-span-2 px-7 lg:border-l-2 border-dotted border-[#dcdcdc]">
             <div class="border-b-2 border-dotted border-[#dcdcdc]">
@@ -444,15 +450,9 @@
               <input placeholder="Enter your email id"
                 class="rounded-xl px-4 outline-none py-3 w-full border border-[#dcddee] mt-3.5" type="email">
             </div>
-
             <div class="mt-5 cursor-pointer">
-
-
               <a id="next-button" href="#my_modal_8"
                 class="btn btn-disabled w-full bg-main  text-white font-bold text-lg text-raleway hover:bg-[#1cd100e0]">Next</a>
-
-
-
             </div>
             <div
               class="flex justify-between px-5 flex-col items-center mt-4 space-y-1 underline cursor-pointer text-[#7c7e83] font-medium">
@@ -463,7 +463,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- footer section  -->
@@ -493,6 +492,7 @@
     </div>
   </footer>
 
+  <!-- Modal Section -->
 
   <div class="modal" role="dialog" id="my_modal_8">
     <div class="modal-box">
@@ -503,7 +503,8 @@
         <p class="text-center  text-sm font-medium pt-6 ">Thank you for Booking Our Bus Seats.
           We are working hard to find the best service and deals for you.
         </p>
-        <p class="text-[#a1a0a0] text-sm font-medium pt-2 text-center">Shortly you will find a confirmation in your email.</p>
+        <p class="text-[#a1a0a0] text-sm font-medium pt-2 text-center">Shortly you will find a confirmation in your
+          email.</p>
       </div>
       <div class="modal-action flex justify-center">
         <a href="#ticket"
@@ -511,6 +512,8 @@
       </div>
     </div>
   </div>
+
+  <!-- javascript file -->
 
   <script src="script.js/main.js"></script>
 </body>
